@@ -1,5 +1,12 @@
 # Hadoop-MapReduce-WordCount
 
+Hadoop is a framework that uses distributed storage and parallel processing to store and manage big data. 
+
+Hadoop has three components-
+1) Hadoop HDFS - Hadoop Distributed File System (HDFS) is the storage unit.
+2) Hadoop MapReduce - Hadoop MapReduce is the processing unit.
+3) Hadoop YARN - Yet Another Resource Negotiator (YARN) is a resource management unit.
+
 ## Installation: 
 
 1.	Download and install JDK 
