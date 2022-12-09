@@ -37,6 +37,7 @@ https://github.com/kontext-tech/winutils/tree/master/hadoop-3.2.1/bin
 If you face any error, follow the below steps further.
 
 9.	 Configuring Hadoop cluster
+
 There are four files we should alter to configure Hadoop cluster:
 1.	%HADOOP_HOME%\etc\hadoop\hdfs-site.xml
 2.	%HADOOP_HOME%\etc\hadoop\core-site.xml
@@ -45,6 +46,7 @@ There are four files we should alter to configure Hadoop cluster:
 
 
 9.1. HDFS site configuration
+
 Hadoop is built using a master-slave paradigm. Before altering the HDFS configuration file, we should create a directory to store all master node (name node) data and another one to store data (data node). In this example, we created the following directories:
 •	E:\hadoop-env\hadoop-3.2.1\data\dfs\namenode
 •	E:\hadoop-env\hadoop-3.2.1\data\dfs\datanode
@@ -54,21 +56,25 @@ Now, open “hdfs-site.xml” file located in “%HADOOP_HOME%\etc\hadoop” dir
 
 
 9.2. Core site configuration
+
 Now, configure the name node URL by adding the following XML code into the <configuration></configuration> element within “core-site.xml”:
 <property><name>fs.default.name</name><value>hdfs://localhost:9820</value></property>
 
 
 9.3. Map Reduce site configuration
+
 Now, add the following XML code into the <configuration></configuration> element within “mapred-site.xml”:
 <property><name>mapreduce.framework.name</name><value>yarn</value><description>MapReduce framework name</description></property>
 
 
 9.4. Yarn site configuration
+
 Now, add the following XML code into the <configuration></configuration> element within “yarn-site.xml”:
 <property><name>yarn.nodemanager.aux-services</name><value>mapreduce_shuffle</value><description>Yarn Node Manager Aux Service</description></property>
 
 
 10.	 Formatting Name node
+
 After the configuration, we’ll format the name node using the following command:
 hdfs namenode -format
 
